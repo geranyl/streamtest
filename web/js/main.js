@@ -1,3 +1,8 @@
+/* Nothing here has been namespaced as it is just a local test. 
+ * If you're using elements of this for your own project, please namespace your javascript.
+ * Let's keep global nice and clean.
+ */
+
 $(document).ready(function() {
 
 	$('#go').click(function(e) {
