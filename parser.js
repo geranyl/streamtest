@@ -40,7 +40,7 @@ Parser.prototype.count = function(parser) {
 	parser.emit('tracking', data);
 	for (var key in parser.tracking) {
 		parser.tracking[key] = 0;
-	}
+	}	
 }
 
 //parses the actual tweet, delimiter already removed when the buffer was converted to a string
@@ -98,7 +98,7 @@ Parser.prototype.write = function(data) {
 		//long tweet - more data coming in to meet the initial predicted length
 		this.buffer.write(data, this.buffer.length);
 	}
-
+	
 	this.emit('data', data);
 };
 
@@ -106,6 +106,7 @@ Parser.prototype.end = function(data) {
 	this.write(data);
 	this.emit('end');
 };
+
 
 Parser.prototype.destroy = function() {
 	clearInterval(this.timer);

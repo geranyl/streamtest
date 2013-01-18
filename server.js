@@ -7,8 +7,10 @@ var io = require('socket.io').listen(8080, {'log level':0});
 var genericEmitter = require('./ee').GenericEmitter;
 
 function start(route, handler) {
+	process.stdout.write('node server started');
 
 	io.sockets.on('connection', function(socket) {
+				
 		//handle incoming notifications
 		socket.on('notification', function(data) {
 			route(handler, data);

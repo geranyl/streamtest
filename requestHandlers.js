@@ -23,9 +23,13 @@ function twit(data) {
 	 **/
 	
 	data.params.delimited = 'length'; 
-	var request = oa.post(twitterURL, config.ACCESS_TOKEN, config.ACCESS_TOKEN_SECRET, data.params, null);
+		
 	parser = new Parser();
 	parser.setTracking(data.params.track, data.params.hashOn);
+	
+	delete data.params.hashOn;
+	var request = oa.post(twitterURL, config.ACCESS_TOKEN, config.ACCESS_TOKEN_SECRET, data.params, null);
+
 	parser.setTimer(1000);//defaults to 1000 anyhow
 	parser.on('tracking', function(data) {
 		genericEmitter.emit('toSocket', 'tracking', data);
@@ -36,8 +40,13 @@ function twit(data) {
 		response.pipe(parser, {
 			end : false
 		});
+		
+		response.on('error', function(){
+			process.stdout.write('streaming error\n');
+		});
+		
 		response.on('end', function() {
-			process.stdout.write('goodbye\n');
+			process.stdout.write('stream ended - goodbye\n');
 		});
 	});
 	request.end();

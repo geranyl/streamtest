@@ -12,9 +12,9 @@ handle['disconnect'] = requestHandlers.disconnect;
 
 
 //catch unhandled errors in node
-process.on('uncaughtException', function(err){
-	console.log(err);
-});
+// process.on('uncaughtException', function(err){
+	// console.log(err);
+// });
 
 
 //start the server

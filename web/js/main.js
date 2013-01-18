@@ -1,4 +1,4 @@
-/* Nothing here has been namespaced as it is just a local test. 
+/*Nothing here has been namespaced as it is just a local test. 
  * If you're using elements of this for your own project, please namespace your javascript.
  * Let's keep global nice and clean.
  */
@@ -35,6 +35,7 @@ function twit(track, hashOn) {
 }
 
 function startSocket(track, hashOn) {
+	
 	if (socket) {
 		socket.emit('notification', {
 			type : 'disconnect'
@@ -44,7 +45,7 @@ function startSocket(track, hashOn) {
 		socket = io.connect('http://localhost:8080');
 	}
 	socket.on('connect', function(data) {
-		twit(track);
+		twit(track, hashOn);
 		//when the websocket gets a call from the server of type 'clientNotification' it will process it here
 		socket.on('clientNotification', function(data) {
 			//show the visual data as a console trace
@@ -72,6 +73,7 @@ function getTrackTerms() {
 	var t1 = $('#inputTermOne').val();
 	var t2 = $('#inputTermTwo').val();
 	var hashOn = $('#hashtag:checked').val()?true:false;	
+	
 	if(stripper.test(t1) || stripper.test(t2)){
 		hashOn = true;
 		$('#hashtag').attr('checked', true);
@@ -91,6 +93,7 @@ function getTrackTerms() {
 	
 	//concatenate values of input term 1 and input term 2 using a comma. 
 	//The track parameter of the Twitter streaming API treats the commas as an 'OR'.
+	
 	startSocket(terms.join(), hashOn);
 }
 
