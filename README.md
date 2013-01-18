@@ -6,8 +6,10 @@ twitter streaming API test
 <p>A small test to try out twitter's realtime streaming API - specifically the POST statuses/filter endpoint - using node.js for the backend.<br/>
 The idea is to compare how many times each of two terms comes through the streaming API per second (this interval is adjustable). For example - comparing the number of times the word 'love' shows up vs 'hate' per second. </p>
 <p>
-I chose node.js as it's very well suited to handling streaming data - http://nodejs.org/api/stream.html.
+I chose node.js as it's very well suited to handling streaming data - http://nodejs.org/api/stream.html.<br/>
+<a href="http://salpy.ca/gum/">Live example</a>
 </p>
+
 
 
 <h2>Overview:</h2>
