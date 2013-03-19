@@ -1,6 +1,6 @@
 {
-  "name": "gum",
-  "subdomain": "salpy.gum",
+  "name": "streamtest",
+  "subdomain": "ca.salpy",
   "scripts": {
     "start": "index.js"
   },
