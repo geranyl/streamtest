@@ -1,0 +1,15 @@
+{
+  "name": "gum",
+  "subdomain": "salpy.gum",
+  "scripts": {
+    "start": "index.js"
+  },
+  "version": "0.0.0-1",
+  "engines": {
+    "node": "0.8.x"
+  },
+  "dependencies": {
+    "socket.io": "0.9.x",
+    "oauth": "0.9.8"
+  }
+}
