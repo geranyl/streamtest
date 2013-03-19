@@ -42,7 +42,7 @@ I chose node.js as it's very well suited to handling streaming data - http://nod
 
 <li><b>Step 2:</b> Realize you still need to run a local server. Hang your head while installing and or running MAMP (or WAMP for you non-mac folk).
 
-<li><b>Step 3:</b> In a command line environment (e.g. Terminal), navigate to the directory the project is in. Type in npm install [package here] and delight in the magic that is the node package manager.
+<li><b>Step 3:</b> In a command line environment (e.g. Terminal), navigate to the directory the project is in. Type in npm install and delight in the magic that is the node package manager. *Not the package.json file will tell npm what dependencies this app requires and it will install them automatically.
 
 <li><b>Step 4:</b> Create a test application through http://dev.twitter.com You'll need your application's OAuth settings as well as your access token. This test application doesn't go through the process of creating an access token for users from the front end. 
 
