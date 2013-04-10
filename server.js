@@ -21,7 +21,7 @@ function start(route, handler) {
 		});
 
 		genericEmitter.on('toSocket', function(type, data) {
-			socket.emit('clientNotification', {
+            io.sockets.emit('clientNotification', {
 				type : type,
 				data : data
 			});
