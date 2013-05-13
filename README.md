@@ -7,7 +7,6 @@ twitter streaming API test
 The idea is to compare how many times each of two terms comes through the streaming API per second (this interval is adjustable). For example - comparing the number of times the word 'love' shows up vs 'hate' per second. </p>
 <p>
 I chose node.js as it's very well suited to handling streaming data - http://nodejs.org/api/stream.html.<br/>
-<a href="http://salpy.ca/gum/">Live example</a>
 </p>
 
 
